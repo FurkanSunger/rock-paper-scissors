@@ -1,0 +1,189 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    background-color: #6c5ce7;
+    min-height: 100vh;
+    font-family: cursive;
+}
+.score{
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    margin-bottom: 2rem;
+}
+.score h2{
+    font-size: 2.5rem;
+}
+.score p{
+    margin: 0.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.intro{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    transition: opacity 0.4s ease;
+}
+.intro h1{
+    font-size: 4rem;
+}
+.intro button, .match button{
+    width: 10rem;
+    height: 3rem;
+    background-color: #a29bfe;
+    color: white;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.match{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.4s ease 0.4s;
+}
+.winner{
+    color: white;
+    text-align: center;
+    font-size: 4rem;
+}
+.hands, .options{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.player-hand{
+    transform: rotateY(180deg);
+}
+
+div.fadeOut{
+    opacity: 0;
+    pointer-events: none;
+}
+div.fadeIn{
+    opacity: 1;
+    pointer-events: all;
+}
+
+@keyframes shakePlayer{
+    0%{
+        transform: rotateY(180deg) translateY(0px);
+    }
+    15%{
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    25%{
+        transform: rotateY(180deg) translateY(0px);
+    }
+    35%{
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    50%{
+        transform: rotateY(180deg) translateY(0px);
+    }
+    65%{
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    75%{
+        transform: rotateY(180deg) translateY(0px);
+    }
+    85%{
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    100%{
+        transform: rotateY(180deg) translateY(0px);
+    }
+}
+@keyframes shakeComputer{
+    0%{
+        transform: translateY(0px);
+    }
+    15%{
+        transform: translateY(-50px);
+    }
+    25%{
+        transform: translateY(0px);
+    }
+    35%{
+        transform: translateY(-50px);
+    }
+    50%{
+        transform: translateY(0px);
+    }
+    65%{
+        transform: translateY(-50px);
+    }
+    75%{
+        transform: translateY(0px);
+    }
+    85%{
+        transform: translateY(-50px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+
+@media only screen and (max-width: 768px){
+    .intro h1{
+        font-size: 3rem;
+    }
+    .intro button{
+        width: 8rem;
+    }
+    .match{
+        width: 80%;
+    }
+    img{
+        width: 50%;
+    }
+    .winner{
+        font-size: 3rem;
+    }
+    .options button{
+        margin: 0.5rem;
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    .score h2{
+        font-size: 1.5rem;
+    }
+    .intro h1{
+        font-size: 2rem;
+        text-align: center;
+    }
+    .intro button{
+        width: 8rem;
+    }
+    .match{
+        width: 100%;
+    }
+    img{
+        width: 50%;
+    }
+    .winner{
+        font-size: 2rem;
+    }
+    .options button{
+        margin: 0.5rem;
+        width: 60%;
+    }
+}
